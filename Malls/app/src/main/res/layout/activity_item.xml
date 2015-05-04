@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.madiyar.malls.ItemActivity">
+
+    <ImageView
+        android:layout_width="250px"
+        android:layout_height="250px"
+        android:layout_marginTop="10px"
+        android:id="@+id/imageView"
+        android:src="@drawable/no"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Item title"
+        android:textSize="45dp"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Item description, this is the best description ever!!! That's it! Beka pacany rahmet vsem beregam"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:ellipsize="marquee"
+        android:lines="3"/>
+
+</RelativeLayout>
