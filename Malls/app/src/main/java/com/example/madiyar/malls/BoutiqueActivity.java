@@ -1,20 +1,25 @@
 package com.example.madiyar.malls;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 
 import java.util.ArrayList;
 import android.content.Context;
+import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class BoutiqueActivity extends Activity {
     GridView gv;
     Context context;
     ArrayList prgmName;
+    String[][] values = new String[][] { {"Aport", "The choice of Kaskelen's people"}, {"MEGA", "The most popular mall in KZ"},
+            {"Dostyk Plaza", "The new one, and good one"}};
     public static String [] prgmNameList={"Let Us C","c++","JAVA","Jsp","Microsoft .Net","Android","PHP","Jquery","JavaScript"};
     public static int [] prgmImages={R.drawable.no,R.drawable.ok,R.drawable.ok,R.drawable.icon_bear,R.drawable.ok,R.drawable.no,R.drawable.icon_bear,R.drawable.no,R.drawable.ok};
     @Override
@@ -24,9 +29,24 @@ public class BoutiqueActivity extends Activity {
         gv=(GridView) findViewById(R.id.gridView);
         gv.setAdapter(new MyGridAdapter(this, prgmNameList, prgmImages));
 
+
+        gv.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(BoutiqueActivity.this, ItemActivity.class);
+                Bundle bun = new Bundle();
+                bun.putInt("position", position);
+                intent.putExtras(bun);
+                startActivity(intent);
+            }
+        });
+
+
         Bundle b = getIntent().getExtras();
         int position = b.getInt("position");
-        Toast.makeText(this, "You selected IN BOUTIQUE: " + position, Toast.LENGTH_SHORT).show();
+        TextView titleText = (TextView) findViewById(R.id.titleText);
+        titleText.setText(values[position][0]);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

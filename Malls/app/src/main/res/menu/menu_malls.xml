@@ -1,5 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MallsActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" android:showAsAction="never" />
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        android:orderInCategory="100"
+        android:showAsAction="always"/>
+
+    <item
+        android:id="@+id/wishlist"
+        android:icon="@drawable/ic_heart"
+        android:title="Wishlist"
+        android:orderInCategory="100"
+        android:showAsAction="always"/>
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"
+        android:orderInCategory="100"
+        android:showAsAction="always"/>
+
 </menu>

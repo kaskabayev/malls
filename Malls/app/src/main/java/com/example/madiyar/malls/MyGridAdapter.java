@@ -4,6 +4,7 @@ package com.example.madiyar.malls;
  * Created by madiyar on 4/28/15.
  */
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -63,15 +64,15 @@ public class MyGridAdapter extends BaseAdapter{
 
         holder.tv.setText(result[position]);
         holder.img.setImageResource(imageId[position]);
-
-        rowView.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
-            }
-        });
+//
+//        rowView.setOnClickListener(new OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+//            }
+//        });
 
         return rowView;
     }
